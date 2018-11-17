@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Теги для таблиць</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Zubarev Dima">
+	<meta name="description" content="Теги для створення таблиць в HTML">
+  <meta name="keywords" content="таблиці в HTML, теги для створення таблиць, тег table, тег tr, тег th, тег td">
+  <link rel="icon" type="text/css" href="favicon.ico">
+</head>
+<body>
+	<style>
+	  table {
+		border-collapse: collapse; /*border-collapse: collapse; відповідає відобреження таблиці*/
+		text-align: center;
+	  }
+	  th, td {
+		border: 1px solid #ccc; 
+		padding:5px 10px;   /*padding відповідає за відсть від контенту до межі ячєйки, 1 по горизонту, 2 по висоті*/
+	  }
+		thead {
+			background: #eee;
+			border:5px solid #ccc;
+		}
+		tfoot {
+			background: #eeee;
+			border:5px solid #ccc;
+		}
+	</style>
+ <table > <!--border="1" cellpadding="5" cellspacing в HTML5 використовувати не професійно-->
+ 	<!--Всі таблиці створюються в окремому контейнері за допомогою table, рамка довколо таблиці - border, 
+ 		cellpadding - відступи від содіржимого до полів з ліва та права, cellspacing - відступ між лініями таблиці-->
+ 	<caption>Таблиця для порівняння авто</caption>
+ 	<!--Назва таблиці caption-->
+ 	<!--Обов'язкова послідовність thead шапка таблиці, tfoot підвал таблиці, tbody тіло таблиці. Good practic.
+ 		ці тегі потрібні для оформлення стиля таблиці-->
+ 	<colgroup style="width:100px; border:5px solid #ccc;"></colgroup>
+ 	<colgroup style="width:250px; border:5px solid #ccc;" span="4"></colgroup>
+ 	<!--якщо для цих 4х стовбців потрібні різні значення тобі для кожного з них треба використовувати col-->
+ 	<colgroup style="width:100px; border: 5px solid #ccc;"></colgroup>
+ 	<!--colgroup об'єднує колонки в групи, не є обов'язковим, але це гарна практика.-->
+ 	<thead>
+ 	 <tr>
+ 		<th>Бренд</th>
+ 		<th>Модель</th>
+ 		<th>Рік випуску</th>
+ 		<th>Тип двигуна</th>
+ 		<th>Тип приводу</th>
+ 		<th>Ціна</th>
+   </tr>
+  </thead>
+ 	<!--tr рядок в таблиці, td ячейка данних, th ячейка заголовку текста-->
+ 	<tfoot>
+ 		<tr>
+ 			<th>Ітого:</th>
+ 			<td colspan="4" rowspan="2"style="text-align: right;">Машини однакові по класу, типу двигуна, плюс/мінус об'єм, всі на автоматі</td>
+ 			<td rowspan="2">Ціни різні</td>
+ 		</tr>
+ 		<!--rowspan об'єднує ячейки по вертікалі або строки, colspan об'єднує ячейки по горизонталі або стовбці-->
+ 		<!--text-align: right використовується в стилі для вирівнювання тексту по центру з права або ліва-->
+ 		<tr>
+ 			<td>5 машни</td>
+ 		</tr>
+ 	</tfoot>
+ 	<tbody>
+  <tr>
+ 		<td>AUDI</td>
+ 		<td>A6 C6</td>
+ 		<td>2010</td>
+ 		<td>Дизель 2.4TDI</td>
+ 		<td>Quattro</td>
+ 		<td>16000$</td>
+ 	</tr>
+ 	<tr>
+ 		<td>BMW</td>
+ 		<td>5</td>
+ 		<td>2011</td>
+ 		<td>Дизель 2.0TDI</td>
+ 		<td>Задній</td>
+ 		<td>20900$</td>
+ 	</tr>
+ 	<tr>
+ 		<td>Skoda</td>
+ 		<td>Octavia А5</td>
+ 		<td>2011</td>
+ 		<td>Бензин 1.8</td>
+ 		<td>Передній</td>
+ 		<td>9900$</td>
+ 	</tr>
+ 	<tr>
+ 		<td>WV</td>
+ 		<td>Passat B6</td>
+ 		<td>2011</td>
+ 		<td>Дизель 2.0TDI</td>
+ 		<td>Передній</td>
+ 		<td rowspan="2">9500$</td> <!--rowspan об'єднує ячейки по вертікалі або строки-->
+ 	</tr>
+ 	<tr>
+ 		<td>Volvo</td>
+ 		<td>XC 70</td>
+ 		<td>2011</td>
+ 		<td colspan="2">На вибір</td> <!--colspan об'єднує ячейки по горизонталі або стовбці-->
+ 	</tr>
+ 	</tbody>
+ </table>
+ <hr>
+ <p>2018&copy;Zubarev Dima</p>
+</body>
+</html>
