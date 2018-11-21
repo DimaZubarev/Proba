@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Zubarev Dima">
+	<meta name="keywords" content="tag from html">
+	<meta name="description" content="Тег from в html та всі нюанси його використання.">
+	<link rel="icon" type="text/css" href="favicon.ico">
+	<title>Тег form</title>
+</head>
+<body>
+	<h3>Форма для заповнення</h3>
+	<style>
+		label{
+			width: 150px;
+			display: inline-block;
+			cursor: pointer;
+		}
+	</style>
+	<form action="#" name="MyForm" enctype="text/plain" method="post"> <!--method="get"-->
+		<p>
+			<label for="name">Вкажіть ім'я:</label>
+			<input type="text" id=name placeholder="Ім'я" required="" autofocus="">
+		</p>
+		<p>
+			<label for="email">Вкажіть e-mail:</label>
+			<input type="email" id=email placeholder="Пошта" required="">
+		</p>
+		<p>
+			<label for="phone">Вкажіть телефон:</label>
+			<input type="phone" id=phone placeholder="Телефон" required="">
+		</p>
+		<p>
+			<label for="password">Вкажіть пароль:</label>
+			<input type="password" id=password placeholder="Пароль" autocomplete="off" required="">
+		</p>
+		<p>
+			<input type="submit" value="Надістлати"> <input type="reset" value="Очистити">
+		</p>
+  </form>
+	<hr>
+	<p>2018 &copy; Zubarev Dima</p>
+	<!--Атрібути form: action="#"-куди відправити данні у формі, name=-ім'я форми для подальшого оброблення, method="post"
+		скриваэ данні вводу щоб ни не відображались в адрісній строці, method="get"-відображає, enctype="text/plain"-
+		спосіб кодування тексту, text/plain- кодує тільки пробєл всі інші символи залишає як є-->
+
+	<!--label тег для пояснення поля в формі та для взаємодії з ним. Атрибут for для поєднання з полем через id-->
+	<!--Атрібути input: type="text" ім'я або текстові данні, type="email" для пошти, type="password" пароль,
+		type="submit" для відправлення форми, type="reset" очищує данні введені в форму, id= щоб поєднати з label через
+		for, placeholder= підказка яка вказана на полі, required="" вказує що поле не коректно заповнене або пусте,
+		autofocus="" ставить автоматично курсор на те поле форми яка нам важлива, autocomplete="off" вспливаючі данні
+		які ви водили до цього, обов'язково на поле з паролем бо по замовченню стоїть on, value= им'я клавіши або поля-->
+</body>
+</html>
