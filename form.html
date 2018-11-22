@@ -19,6 +19,11 @@
 	</style>
 	<form action="#" name="MyForm" enctype="text/plain" method="post"> <!--method="get"-->
 		<p>
+			<label for="sex">Вкажіть стать:</label>
+			<input type="radio" id=sex name=sex>Чоловіча
+			<input type="radio" name=sex>Жіноча
+		</p>
+		<p>
 			<label for="name">Вкажіть ім'я:</label>
 			<input type="text" id=name placeholder="Ім'я" required="" autofocus="">
 		</p>
@@ -28,7 +33,33 @@
 		</p>
 		<p>
 			<label for="phone">Вкажіть телефон:</label>
-			<input type="phone" id=phone placeholder="Телефон" required="">
+			<input type="tel" id=phone placeholder="Телефон" required="" maxlength="13">
+		</p>
+		<p>
+			<label for="web">Вкажіть сайт:</label>
+			<input type="url" id=web placeholder="Адреса сайту" required="">
+		</p>
+		<p>
+			<label for="durationOfLesson">Вкажіть тривалість заняття:</label>
+			<input type="number" id=durationOfLesson min="15" max="90" step="15" value="15">
+		</p>
+		<p>
+			<label for="growth">Ваш зріст:</label>
+			<input type="range" id=growth min="150" max="210" step="5" value="170" 
+			oninput="out1.value=(growth.value); out2.value=(growth.value*10)">
+			<br><br>
+			<label>Ваш зріст дорівнює:</label>
+			<output id="out1">170</output>(см)
+			<br>
+			<label>або:</label>
+			<output id="out2">1700</output>(мм)
+		</p>
+		<p>
+			<label for="follow">Підписатися на:</label>
+			<input type="checkbox" id=follow name=follow checked="">Всі блоги
+			<input type="checkbox" name=follow>HTML5
+			<input type="checkbox" name=follow>CSS3
+			<input type="checkbox" name=follow>JavaScript
 		</p>
 		<p>
 			<label for="password">Вкажіть пароль:</label>
@@ -40,15 +71,33 @@
   </form>
 	<hr>
 	<p>2018 &copy; Zubarev Dima</p>
-	<!--Атрібути form: action="#"-куди відправити данні у формі, name=-ім'я форми для подальшого оброблення, method="post"
-		скриваэ данні вводу щоб ни не відображались в адрісній строці, method="get"-відображає, enctype="text/plain"-
-		спосіб кодування тексту, text/plain- кодує тільки пробєл всі інші символи залишає як є-->
+	<!--Атрібути form: 
+	action="#"-куди відправити данні у формі, 
+	name=-ім'я форми для подальшого оброблення, 
+	method="post"скриваэ данні вводу щоб ни не відображались в адрісній строці, 
+	method="get"-відображає, 
+	enctype="text/plain"-спосіб кодування тексту, 
+	text/plain- кодує тільки пробєл всі інші символи залишає як є-->
 
 	<!--label тег для пояснення поля в формі та для взаємодії з ним. Атрибут for для поєднання з полем через id-->
-	<!--Атрібути input: type="text" ім'я або текстові данні, type="email" для пошти, type="password" пароль,
-		type="submit" для відправлення форми, type="reset" очищує данні введені в форму, id= щоб поєднати з label через
-		for, placeholder= підказка яка вказана на полі, required="" вказує що поле не коректно заповнене або пусте,
-		autofocus="" ставить автоматично курсор на те поле форми яка нам важлива, autocomplete="off" вспливаючі данні
-		які ви водили до цього, обов'язково на поле з паролем бо по замовченню стоїть on, value= им'я клавіши або поля-->
+	<!--Атрібути input: 
+	type="text" ім'я або текстові данні, 
+	type="email" для пошти, 
+	type="password" пароль,
+	type="tel" для вводу телефонів, 
+	type="submit" для відправлення форми, 
+	type="reset" очищує данні введені в форму,
+	type="url" для вводу сайтів,  
+	type="number" для вводу чисел,
+	type="range" служить для створення повзунків,
+	для number та range знадобляться доп атрібути min="" max="" step=""
+  id= щоб поєднати з label через for, 
+  placeholder= підказка яка вказана на полі, 
+  required="" вказує що поле не коректно заповнене або пусте, 
+  autofocus="" ставить автоматично курсор на те поле форми яка нам важлива, autocomplete="off" вспливаючі данні 
+  які ви водили до цього, обов'язково на поле з паролем бо по замовченню стоїть on, 
+  value= им'я клавіши або поля, 
+  maxlength="" вказує на максимальну кількість символів для інформації
+	  -->
 </body>
 </html>
