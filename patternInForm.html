@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Використання атрибути pattern в input">
+	<meta name="keywords" content="pattern в інпут, pattern html, pattern in input">
+	<meta name="author" content="Zubarev Dima">
+	<link rel="icon" type="text/css" href="favicon.ico">
+	<title>Атрібут патерн в формах</title>
+</head>
+<body>
+	<h1>Pattern in input</h1>
+   <style>
+   	label{
+			width: 150px;
+			display: inline-block;
+			cursor: pointer;
+		}
+		form{
+			width: 500px;
+			margin: 20px auto;
+      font-family: sans-serif;
+      font-size: 15px;
+		}
+		fieldset{
+			border: 3px double #ccc;
+			border-radius: 4px;
+			margin: 20px auto;
+			padding: 20px;
+			background: #f7f7f7;
+		}
+		legend{
+			border-radius: 4px;
+			padding: 5px 10px;
+			background: #ff9300;
+			color: #6d2424;
+   </style>
+	
+	 <form action="#" name="PatternInInput" enctype="text/plain" method="post">
+	 	<fieldset>
+	 		<legend>Що в голову взбрело</legend>
+	 		<p>
+	 		<label for="phone">Вкажіть ваш номер телефону:</label>
+	 	  <input type="tel" placeholder="+38 067 674 99 97" pattern="\+\d{2}\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}">
+	 	</p>
+	 
+	 	<p>
+	 		<label for="password">Вкажіть ваш пароль:</label>
+	 	  <input id="password" type="text" placeholder="Пароль" pattern="\d+(,\d{2})?">
+	 	</p>
+
+	 	<p>
+	 		<label for="control">Вкажіть слово для перевірки:</label>
+	 	  <input id="control" type="text" placeholder="Слово для перевірки" pattern="[abc]{2}\d+">
+	 	</p>
+
+	 	<p>
+	 		<label for="city">Виберіть місто:</label>
+	 		<select name="city" id="city">  <!--multiple size="6"-->
+	 			<option disabled="" selected="">Вибір міст</option>
+	 			<optgroup label="Україна">
+	 				<option value="city1">Київ</option>
+	 			  <option value="city2">Львів</option>
+	 			  <option value="city3">Франківськ</option>
+	 			  <option value="city4">Запоріжжя</option>
+	 			  <option value="city5">Днєпр</option>
+	 			</optgroup>
+	 			<optgroup label="Чехія">
+	 				<option value="city6">Прага</option>
+	 			  <option value="city7">Брно</option>
+	 			  <option value="city8">Ліберець</option>
+	 			  <option value="city9">Плзінь</option>
+	 			</optgroup>
+	 		</select>
+	 	</p>
+
+    <p>
+    	<label for="message">Зворотній зв'язок</label>
+    	<textarea name="message" id="message" cols="30" rows="10" maxlength="100" 
+    	 placeholder="Ведіть повідомлення до 100 символів"></textarea>	
+    </p>
+
+	 	<p>
+	 		<input type="submit" value="Відправити"> &nbsp;<input type="reset" value="Очістити">
+	 	</p>
+	 	</fieldset>
+	 </form>
+	 <hr>
+	 	2018 &nbsp;&copy; &nbsp;Zubarev Dima
+</body>
+</html>
+<!--select сторює випадаючий список, має атрібут multiple що дозволяє вибирати декілька елемнтів зі списку,
+    але зі старту показує 3 рядки зі списку та size="" вказує скільки рядків зі списку показувати в анкеті.
+    optgroup груперує список має атрібут label який сторює назву для групи
+	  option для вводу елементу із списку, атрібут value="" обов'язковий, саме він відправлється на сервер для обробки,
+	   selected дозволяє позначити елемент по замовченню, disabled забороняє вибирати елемент списку.
+-->
+<!--textarea додає поля для вводу повідомлення
+    cols="" визначає довжину поля в символах
+    rows="" визначає висоту в рядках
+    maxlength="" задає максимальну кількість символів
+-->
