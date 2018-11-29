@@ -8,6 +8,7 @@
 	<link rel="icon" type="text/css" href="favicon.ico">
 	<title>Тег form</title>
 </head>
+
 <body>
 	<h3>Форма для заповнення</h3>
 	<style>
@@ -16,33 +17,63 @@
 			display: inline-block;
 			cursor: pointer;
 		}
+		form{
+			width: 500px;
+			margin: 20px auto;
+      font-family: sans-serif;
+      font-size: 15px;
+		}
+		fieldset{
+			border: 3px double #ccc;
+			border-radius: 4px;
+			margin: 20px auto;
+			padding: 20px;
+			background: #f7f7f7;
+		}
+		legend{
+			border-radius: 4px;
+			padding: 5px 10px;
+			background: #ff9300;
+			color: #6d2424;
+		}
 	</style>
+	
 	<form action="#" name="MyForm" enctype="text/plain" method="post"> <!--method="get"-->
-		<p>
+		
+		<fieldset>
+		 <legend>Особисті данні</legend>
+		 <p>
 			<label for="sex">Вкажіть стать:</label>
 			<input type="radio" id=sex name=sex>Чоловіча
 			<input type="radio" name=sex>Жіноча
-		</p>
-		<p>
+		 </p>
+		
+		 <p>
 			<label for="name">Вкажіть ім'я:</label>
 			<input type="text" id=name placeholder="Ім'я" required="" autofocus="">
-		</p>
-		<p>
+		 </p>
+		
+		 <p>
 			<label for="email">Вкажіть e-mail:</label>
 			<input type="email" id=email placeholder="Пошта" required="">
-		</p>
-		<p>
+		 </p>
+		
+		 <p>
 			<label for="phone">Вкажіть телефон:</label>
 			<input type="tel" id=phone placeholder="Телефон" required="" maxlength="13">
-		</p>
+		 </p>	
+		</fieldset>
+		
 		<p>
 			<label for="web">Вкажіть сайт:</label>
 			<input type="url" id=web placeholder="Адреса сайту" required="">
 		</p>
+		
 		<p>
 			<label for="durationOfLesson">Вкажіть тривалість заняття:</label>
 			<input type="number" id=durationOfLesson min="15" max="90" step="15" value="15">
 		</p>
+		
 		<p>
 			<label for="growth">Ваш зріст:</label>
 			<input type="range" id=growth min="150" max="210" step="5" value="170" 
@@ -54,6 +85,7 @@
 			<label>або:</label>
 			<output id="out2">1700</output>(мм)
 		</p>
+		
 		<p>
 			<label for="follow">Підписатися на:</label>
 			<input type="checkbox" id=follow name=follow checked="">Всі блоги
@@ -61,10 +93,27 @@
 			<input type="checkbox" name=follow>CSS3
 			<input type="checkbox" name=follow>JavaScript
 		</p>
+		
+    <p>
+			<label for="color">Виберіть колір:</label>
+			<input type="color" id=color value="#d80000">
+		</p>
+
+		<p>
+			<label for="time">Вкажіть бажанний час:</label>
+			З &nbsp;<input type="time" id=time min="08:00" max="16:00"> &nbsp;до &nbsp;<input type="time" id=time min="08:00" max="16:00">
+		</p>
+		 
+		 <p>
+			<label for="date">Вкажіть дату народження:</label>
+			<input type="date" id=date max="2001-01-01"> &nbsp;Якщо ви народилися в 2001 році і пізніше, Вам заборонено використовувати ресурс!
+		</p>
+
 		<p>
 			<label for="password">Вкажіть пароль:</label>
 			<input type="password" id=password placeholder="Пароль" autocomplete="off" required="">
 		</p>
+
 		<p>
 			<input type="submit" value="Надістлати"> <input type="reset" value="Очистити">
 		</p>
@@ -89,6 +138,10 @@
 	type="reset" очищує данні введені в форму,
 	type="url" для вводу сайтів,  
 	type="number" для вводу чисел,
+	type="color" для вводу кольору, для вказання кольору по замовченню колір вводиться повністю
+	type="time" для вводу часу, можна вказати мінімальне та максимальне значення, час вводиться min="08:00"
+	type="date" для вводу дати, є можливість вказати мінімальне та максимальне значення, дата вводиться max="2001-01-01"
+	 також є мождливість вибрати рік, тиждень або дату з часом
 	type="range" служить для створення повзунків,
 	для number та range знадобляться доп атрібути min="" max="" step=""
   id= щоб поєднати з label через for, 
@@ -98,6 +151,8 @@
   які ви водили до цього, обов'язково на поле з паролем бо по замовченню стоїть on, 
   value= им'я клавіши або поля, 
   maxlength="" вказує на максимальну кількість символів для інформації
-	  -->
+  -->
+  <!--fieldset обводить рамкою форму або виділяє блок
+  	legend задає блоку назву-->
 </body>
 </html>
